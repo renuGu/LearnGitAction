@@ -2,7 +2,7 @@ name: first workflow action
 on: push
 jobs:
     first_job:
-     runs-on: ubuntu-18.04
+     runs-on: ubuntu-latest
      steps: 
      - name: welcome message
        run: echo "my first program"
