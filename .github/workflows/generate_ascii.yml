@@ -7,10 +7,8 @@ jobs:
      - name: checkout repo
        uses: actions/checkout@v6
 
-    - name: Executing a script
-      run: ./ascii_txt.sh
-    -name: list
-     run: ls -lrta
+     - name: Executing a script
+       run: ./ascii_txt.sh
 
-
-
+     - name: list
+       run: ls -lrta
