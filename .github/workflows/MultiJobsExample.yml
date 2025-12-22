@@ -1,4 +1,4 @@
-name: Multi workflow action
+name: Multi workflow action new
 on: push
 jobs:
     build_job:
