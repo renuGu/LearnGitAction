@@ -1,0 +1,42 @@
+name: second workflow action
+on: push
+jobs:
+    build_job:
+     runs-on: ubuntu-latest
+     steps: 
+     - name: Install 
+       run: sudo apt-get install cowsay -y
+     - name: list files
+       run: |
+        echo "my first program"
+        ls -rlta
+     - name: generate a Ascii artwork
+       run: cowsay -f dragon “Run for cover, I am DRAGON” >> dragon.txt
+
+     - name: upload dragon file
+       uses: actions/upload-artifact@v4
+       with: 
+        name: dragaon-text-file
+        path: dragon.txt
+
+    test_job:
+        needs: build_job
+        runs-on: ubuntu-latest
+        steps: 
+        - name: download dragon file
+          uses: actions/download-artifact@v5
+          with:
+            name: dragaon-text-file
+        - name: test file
+          run: grep -i "dragon" dragon.txt
+
+    deploy_job:
+        runs-on: ubuntu-latest
+        steps:
+         - name: download dragon file
+           uses: actions/download-artifact@v5
+           with:
+            name: dragaon-text-file 
+         - name: print file
+           run: cat dragon.txt
+            
