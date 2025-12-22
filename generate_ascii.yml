@@ -9,6 +9,8 @@ jobs:
 
     - name: Executing a script
       run: ./ascii_txt.sh
+    -name: list
+     run: ls -lrta
 
 
 
