@@ -7,7 +7,7 @@ jobs:
      - name: checkout repo
        uses: actions/checkout@v6
 
-    - name: Install cowboy Program 
+    - name: Executing a script
       run: ./ascii_txt.sh
 
 
