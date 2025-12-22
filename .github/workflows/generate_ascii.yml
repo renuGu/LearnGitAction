@@ -12,8 +12,8 @@ jobs:
 
      - name: Executing a script
        run: |
-         chmod +x ./ascii-txt.sh
-         ./ascii-txt.sh
+         chmod +x ascii.sh
+         ./ascii.sh
 
      - name: list
        run: ls -lrta
