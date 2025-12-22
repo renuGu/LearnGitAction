@@ -12,7 +12,7 @@ jobs:
 
      - name: Executing a script
        run: |
-         chmod +x ascii-txt.sh
+         chmod +x ./ascii-txt.sh
          ./ascii-txt.sh
 
      - name: list
