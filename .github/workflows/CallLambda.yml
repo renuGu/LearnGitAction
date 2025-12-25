@@ -22,7 +22,7 @@ jobs:
       - name: Invoke Lambda
         run: |
           aws lambda invoke \
-            --function-name CallBedrockModel2arn:aws:lambda:us-east-2:772837503944:function:CallBedrockModel2 \
+            --function-name arn:aws:lambda:us-east-2:772837503944:function:CallBedrockModel2 \
             --cli-binary-format raw-in-base64-out \
             --payload '{"source":"github","action":"push"}' \
             response.json
